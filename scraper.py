@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import random
+import csv
 import re
 import time
 from datetime import datetime, timedelta
@@ -202,7 +203,7 @@ def save_listing_to_file(filepath, listing_data):
     with open(filepath, 'a', encoding='utf-8') as f:
         json.dump(listing_data, f)
         f.write('\n')
-        
+
 def save_listing_to_csv(filepath, listing_data):
     """Saves a listing dictionary to a CSV file, creating a header if needed."""
     
@@ -461,14 +462,14 @@ def scrape_marketplace(driver, search_terms, location, config):
 
                     # --- SUCCESS! LISTING PASSED ALL FILTERS ---
                     logging.info(f"✅ Found valid new listing: '{title}'")
-                    price = driver.find_element(By.XPATH, "//h1/..//span").text
-                    location_text = driver.find_element(By.XPATH, "//*[contains(@href, '/marketplace/location/')]").text
-                    image_url = driver.find_element(By.CSS_SELECTOR, "img[data-visualcompletion='media-vc-image']").get_attribute('src')
+                    price = driver.find_element(By.XPATH, '//div[@aria-hidden="false"]//span[starts-with(text(), "$")]').text
+                    location_text = driver.find_element(By.XPATH, '//a[contains(@href, "/marketplace/") and .//span]').text
+                    image_url = driver.find_element(By.XPATH, '//img[starts-with(@alt, "Product photo of")]').get_attribute('src')
                     
                     listing_data = {
                         "id": item_id, "title": title, "price": price, "location": location_text,
                         "post_time_str": post_time_str, "scraped_at": datetime.now().isoformat(),
-                        "link": link, "image_urls": [image_url]
+                        "link": link, "image_url": [image_url]
                     }
 
                     save_listing_to_csv(output_file, listing_data)
