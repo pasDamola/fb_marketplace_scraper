@@ -1952,3 +1952,1167 @@ Stacktrace:
 2025-06-19 10:42:10,504 [INFO] Attempting to close overlay by clicking the generic 'X' button.
 2025-06-19 10:42:12,986 [INFO] Scraping run finished. Found 4 new listings.
 2025-06-19 10:42:13,200 [INFO] WebDriver closed.
+2025-06-19 17:12:27,022 [INFO] Setting up ChromeDriver...
+2025-06-19 17:12:27,023 [INFO] ====== WebDriver manager ======
+2025-06-19 17:12:30,243 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-19 17:12:30,954 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-19 17:12:31,428 [INFO] Driver [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-06-19 17:12:31,429 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-19 17:12:31,429 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-19 17:12:31,429 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-19 17:12:32,779 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-19 17:12:32,780 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone 13'.
+2025-06-19 17:12:32,780 [INFO] Scraping for listings newer than: 1 day
+2025-06-19 17:12:32,780 [INFO] Navigating to URL for search term 'iphone 13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone%2013&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-19 17:12:39,396 [INFO] Attempting to close dialog by clicking its 'X' button.
+2025-06-19 17:12:40,419 [INFO] Scrolling to load listings...
+2025-06-19 17:12:46,458 [INFO] Found and hid the persistent login popup overlay.
+2025-06-19 17:12:49,467 [INFO] Found and hid the persistent login popup overlay.
+2025-06-19 17:12:49,481 [INFO] Found 47 potential listings for 'iphone 13'. Starting processing...
+2025-06-19 17:12:49,518 [INFO] Clicking on listing 'IPhone 13 Tmobile 5G Pink 256GB Excellent Condition NUV6 in Miami Beach, FL' to open detail view.
+2025-06-19 17:12:50,582 [ERROR] Error processing listing 'IPhone 13 Tmobile 5G Pink 256GB Excellent Condition NUV6 in Miami Beach, FL': Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/699582746288072/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.105)
+Stacktrace:
+0   chromedriver                        0x0000000104df5d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104dedf88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x000000010493e6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x000000010498b544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000104989ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x00000001049878c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000104986cc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x000000010497b728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x000000010497b1b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x00000001049c70c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000104979be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000104db9598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000104dbc830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000104d99c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x0000000104dbd0b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000104d8adec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000104ddd420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x0000000104ddd5ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000104dedbd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x0000000185f92034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000185f8ce3c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 393, in scrape_marketplace
+    listing_element.click()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 394, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/699582746288072/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.105)
+Stacktrace:
+0   chromedriver                        0x0000000104df5d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104dedf88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x000000010493e6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x000000010498b544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000104989ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x00000001049878c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000104986cc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x000000010497b728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x000000010497b1b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x00000001049c70c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000104979be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000104db9598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000104dbc830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000104d99c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x0000000104dbd0b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000104d8adec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000104ddd420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x0000000104ddd5ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000104dedbd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x0000000185f92034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000185f8ce3c thread_start + 8
+
+2025-06-19 17:12:55,718 [WARNING] 'X' button not found or not clickable in time.
+2025-06-19 17:12:55,732 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-19 17:12:57,772 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 128 GB Gold UNLOCKED EC87 in Lauderhill, FL' to open detail view.
+2025-06-19 17:12:59,855 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 128 GB Gold UNLOCKED EC87 in Lauderhill, FL'
+2025-06-19 17:13:03,011 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:05,448 [INFO] Clicking on listing 'IPhone 13pro max in Miami, FL' to open detail view.
+2025-06-19 17:13:07,052 [INFO] ✅ Found valid new listing: 'IPhone 13pro max in Miami, FL'
+2025-06-19 17:13:10,187 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:12,320 [INFO] Clicking on listing 'Apple iphone 13 pro max unlocked in Miami, FL' to open detail view.
+2025-06-19 17:13:14,443 [INFO] ✅ Found valid new listing: 'Apple iphone 13 pro max unlocked in Miami, FL'
+2025-06-19 17:13:17,590 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:30,671 [WARNING] 'X' button not found or not clickable in time.
+2025-06-19 17:13:30,684 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-19 17:13:32,508 [INFO] Clicking on listing 'iPhone 13 Pro (256gb) Unlocked Good Condition Black Color in Hollywood, FL' to open detail view.
+2025-06-19 17:13:34,644 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro (256gb) Unlocked Good Condition Black Color in Hollywood, FL'
+2025-06-19 17:13:37,785 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:39,943 [INFO] Clicking on listing 'Apple iPhone 13 pro 128gb All Carriers Black in Hollywood, FL' to open detail view.
+2025-06-19 17:13:41,541 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 pro 128gb All Carriers Black in Hollywood, FL'
+2025-06-19 17:13:44,719 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:46,937 [INFO] Clicking on listing 'Apple iPhone 13 256 GB in Midnight  Unlocked 2L63 in Lauderhill, FL' to open detail view.
+2025-06-19 17:13:49,036 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256 GB in Midnight  Unlocked 2L63 in Lauderhill, FL'
+2025-06-19 17:13:52,185 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:13:54,856 [INFO] Clicking on listing 'iPhone 13 Pro Max 512GB Unlocked 6Z52 in Pembroke Pines, FL' to open detail view.
+2025-06-19 17:13:56,444 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max 512GB Unlocked 6Z52 in Pembroke Pines, FL'
+2025-06-19 17:13:59,598 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:02,205 [INFO] Clicking on listing 'iPhone 13 Pro Max 256gb Sierra Blue Carrier Unlocked ZDV7 in Lake Worth Beach, FL' to open detail view.
+2025-06-19 17:14:04,351 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max 256gb Sierra Blue Carrier Unlocked ZDV7 in Lake Worth Beach, FL'
+2025-06-19 17:14:07,509 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:10,017 [INFO] Clicking on listing 'iPhone 13 9O29 in Hialeah, FL' to open detail view.
+2025-06-19 17:14:12,143 [INFO] ✅ Found valid new listing: 'iPhone 13 9O29 in Hialeah, FL'
+2025-06-19 17:14:15,302 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:17,795 [INFO] Clicking on listing 'Apple iPhone 13 Pro 265gb 3M89 in Hialeah, FL' to open detail view.
+2025-06-19 17:14:19,399 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro 265gb 3M89 in Hialeah, FL'
+2025-06-19 17:14:22,534 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:25,028 [INFO] Clicking on listing 'iPhone 13 (Unlocked to all carriers) in West Palm Beach, FL' to open detail view.
+2025-06-19 17:14:27,654 [INFO] ✅ Found valid new listing: 'iPhone 13 (Unlocked to all carriers) in West Palm Beach, FL'
+2025-06-19 17:14:30,804 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:33,668 [INFO] Clicking on listing 'iPhone 13 P1EQ in Davie, FL' to open detail view.
+2025-06-19 17:14:37,335 [INFO] ✅ Found valid new listing: 'iPhone 13 P1EQ in Davie, FL'
+2025-06-19 17:14:40,476 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:42,660 [INFO] Clicking on listing 'Case and screen protectors iPhone 13 Pro Max in Lake Worth Beach, FL' to open detail view.
+2025-06-19 17:14:44,256 [INFO] ✅ Found valid new listing: 'Case and screen protectors iPhone 13 Pro Max in Lake Worth Beach, FL'
+2025-06-19 17:14:47,409 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:49,550 [INFO] Clicking on listing 'Apple iPhone 13 Mini 128 GB in Blue MINT unlocked w Apple case B6UR in Coral Springs, FL' to open detail view.
+2025-06-19 17:14:52,197 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Mini 128 GB in Blue MINT unlocked w Apple case B6UR in Coral Springs, FL'
+2025-06-19 17:14:55,355 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:14:57,815 [INFO] Clicking on listing 'NEW Apple iPhone 13 Pro 128 GB in Graphite D8U8 in Miami, FL' to open detail view.
+2025-06-19 17:14:59,895 [INFO] ✅ Found valid new listing: 'NEW Apple iPhone 13 Pro 128 GB in Graphite D8U8 in Miami, FL'
+2025-06-19 17:15:03,056 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-19 17:15:03,908 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(54, 'Connection reset by peer')': /session/b5c9eba922f6383cdfcf9ad9e2c87ae7
+2025-06-19 17:15:03,909 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105dbc2d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/b5c9eba922f6383cdfcf9ad9e2c87ae7
+2025-06-19 17:15:03,910 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105dbd050>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/b5c9eba922f6383cdfcf9ad9e2c87ae7
+2025-06-19 17:15:03,916 [INFO] WebDriver closed.
+2025-06-20 18:38:43,358 [INFO] Setting up ChromeDriver...
+2025-06-20 18:38:43,358 [INFO] ====== WebDriver manager ======
+2025-06-20 18:38:43,440 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:40:02,017 [INFO] Setting up ChromeDriver...
+2025-06-20 18:40:02,017 [INFO] ====== WebDriver manager ======
+2025-06-20 18:40:02,092 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:41:56,423 [INFO] Setting up ChromeDriver...
+2025-06-20 18:41:56,424 [INFO] ====== WebDriver manager ======
+2025-06-20 18:41:56,493 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:42:01,173 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:42:05,805 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:42:16,733 [INFO] WebDriver version 137.0.7151.119 selected
+2025-06-20 18:42:16,736 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-20 18:42:16,737 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-20 18:42:22,516 [CRITICAL] A critical error occurred during WebDriver setup: Could not reach host. Are you offline?
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 961, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/http.py", line 32, in get
+    resp = requests.get(
+           ^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 227, in setup_driver
+    driver_path = ChromeDriverManager().install()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/chrome.py", line 40, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/manager.py", line 40, in _get_driver_binary_path
+    file = self._download_manager.download_file(driver.get_driver_download_url(os_type))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/download_manager.py", line 29, in download_file
+    response = self._http_client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/http.py", line 35, in get
+    raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
+requests.exceptions.ConnectionError: Could not reach host. Are you offline?
+2025-06-20 18:42:22,528 [CRITICAL] Please ensure Google Chrome is installed and that your internet connection is stable.
+2025-06-20 18:42:22,528 [CRITICAL] A critical error occurred in the main script: Could not reach host. Are you offline?
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 961, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/http.py", line 32, in get
+    resp = requests.get(
+           ^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x105dce090>: Failed to resolve 'storage.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 491, in main
+    driver = setup_driver()
+             ^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 227, in setup_driver
+    driver_path = ChromeDriverManager().install()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/chrome.py", line 40, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/manager.py", line 40, in _get_driver_binary_path
+    file = self._download_manager.download_file(driver.get_driver_download_url(os_type))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/download_manager.py", line 29, in download_file
+    response = self._http_client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/webdriver_manager/core/http.py", line 35, in get
+    raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
+requests.exceptions.ConnectionError: Could not reach host. Are you offline?
+2025-06-20 18:44:39,836 [INFO] Setting up ChromeDriver...
+2025-06-20 18:44:39,837 [INFO] ====== WebDriver manager ======
+2025-06-20 18:44:39,911 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:44:41,742 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:44:42,518 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:44:44,352 [INFO] WebDriver version 137.0.7151.119 selected
+2025-06-20 18:44:44,355 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-20 18:44:44,355 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-20 18:44:45,010 [INFO] Driver downloading response is 200
+2025-06-20 18:44:54,284 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:44:55,007 [INFO] Driver has been saved in cache [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119]
+2025-06-20 18:44:55,008 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-20 18:44:55,008 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:44:55,008 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:44:56,341 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-20 18:44:56,341 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-20 18:44:56,341 [INFO] Scraping for listings newer than: 1 day
+2025-06-20 18:44:56,342 [INFO] Navigating to URL for search term 'iphone13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone13&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-20 18:45:04,849 [INFO] Attempting to close dialog by clicking its 'X' button.
+2025-06-20 18:45:05,870 [INFO] Scrolling to load listings...
+2025-06-20 18:45:11,906 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:45:14,919 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:45:14,926 [INFO] Found 46 potential listings for 'iphone13'. Starting processing...
+2025-06-20 18:45:14,947 [INFO] Clicking on listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL' to open detail view.
+2025-06-20 18:45:15,969 [ERROR] Error processing listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL': Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024d3544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x00000001024d1ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x00000001024cf8c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x00000001024cecc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x00000001024c3728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x00000001024c31b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 393, in scrape_marketplace
+    listing_element.click()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 394, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024d3544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x00000001024d1ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x00000001024cf8c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x00000001024cecc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x00000001024c3728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x00000001024c31b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:45:21,116 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:45:21,134 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:45:22,914 [INFO] Clicking on listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL' to open detail view.
+2025-06-20 18:45:44,891 [WARNING] Could not process listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:45:47,985 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:45:50,741 [INFO] Clicking on listing 'iPhone 13 128gb in Miami, FL' to open detail view.
+2025-06-20 18:46:12,215 [WARNING] Could not process listing 'iPhone 13 128gb in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:46:15,336 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:46:18,388 [INFO] Clicking on listing 'VENDO IPhone 13 como nuevo in Hollywood, FL' to open detail view.
+2025-06-20 18:46:25,129 [INFO] ✅ Found valid new listing: 'VENDO IPhone 13 como nuevo in Hollywood, FL'
+2025-06-20 18:46:28,267 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:46:41,294 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:46:41,310 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:46:43,785 [INFO] Clicking on listing 'IPhone 13pro max unlocked in Miami, FL' to open detail view.
+2025-06-20 18:46:45,887 [INFO] ✅ Found valid new listing: 'IPhone 13pro max unlocked in Miami, FL'
+2025-06-20 18:46:49,017 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:46:51,183 [INFO] Clicking on listing 'iPhone 13 pro max 128gb GOLD in Miami, FL' to open detail view.
+2025-06-20 18:47:12,745 [WARNING] Could not process listing 'iPhone 13 pro max 128gb GOLD in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:47:15,885 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:18,223 [INFO] Clicking on listing 'OtterBox iPhone 13 Pro (ONLY) Commuter Series Case in Boca Raton, FL' to open detail view.
+2025-06-20 18:47:20,328 [INFO] ✅ Found valid new listing: 'OtterBox iPhone 13 Pro (ONLY) Commuter Series Case in Boca Raton, FL'
+2025-06-20 18:47:23,498 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:25,762 [INFO] Clicking on listing 'iPhone 13 UN6CY5 in Miami, FL' to open detail view.
+2025-06-20 18:47:28,365 [INFO] ✅ Found valid new listing: 'iPhone 13 UN6CY5 in Miami, FL'
+2025-06-20 18:47:31,522 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:34,297 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 256GB in Graphite for Unlocked HDV2VP in North Miami Beach, FL' to open detail view.
+2025-06-20 18:47:35,878 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 256GB in Graphite for Unlocked HDV2VP in North Miami Beach, FL'
+2025-06-20 18:47:39,011 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:41,670 [INFO] Clicking on listing 'Apple iPhone 13 Mini 128 GB Unlocked CQC3BL in Homestead, FL' to open detail view.
+2025-06-20 18:47:43,255 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Mini 128 GB Unlocked CQC3BL in Homestead, FL'
+2025-06-20 18:47:46,396 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:48,763 [INFO] Clicking on listing 'Apple iPhone 13 Midnight Unlocked GO3LQP in Miami, FL' to open detail view.
+2025-06-20 18:47:50,872 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Midnight Unlocked GO3LQP in Miami, FL'
+2025-06-20 18:47:54,026 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:47:56,970 [INFO] Clicking on listing 'Apple iPhone 13 256 GB T9UHQ9 in Wilton Manors, FL' to open detail view.
+2025-06-20 18:48:00,077 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256 GB T9UHQ9 in Wilton Manors, FL'
+2025-06-20 18:48:03,209 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:06,267 [INFO] Clicking on listing 'Apple iPhone 13 256 GB in Midnight Verizon L6YGLY in Opa-Locka, FL' to open detail view.
+2025-06-20 18:48:08,350 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256 GB in Midnight Verizon L6YGLY in Opa-Locka, FL'
+2025-06-20 18:48:11,499 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:14,143 [INFO] Clicking on listing 'IPhone 13pro max in Miami, FL' to open detail view.
+2025-06-20 18:48:15,699 [INFO] ✅ Found valid new listing: 'IPhone 13pro max in Miami, FL'
+2025-06-20 18:48:18,865 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:21,301 [INFO] Clicking on listing 'Apple iPhone 13 128 GB S58HO7 in North Miami, FL' to open detail view.
+2025-06-20 18:48:23,396 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 128 GB S58HO7 in North Miami, FL'
+2025-06-20 18:48:26,530 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:28,708 [INFO] Clicking on listing 'ON HOLD Apple iPhone 13 Pro Max Locked ATT BEE640 in Pompano Beach, FL' to open detail view.
+2025-06-20 18:48:31,311 [INFO] ✅ Found valid new listing: 'ON HOLD Apple iPhone 13 Pro Max Locked ATT BEE640 in Pompano Beach, FL'
+2025-06-20 18:48:34,459 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:37,374 [INFO] Clicking on listing 'iPhone 13 Pro 256gb C8D9 in Miami Beach, FL' to open detail view.
+2025-06-20 18:48:47,144 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro 256gb C8D9 in Miami Beach, FL'
+2025-06-20 18:48:50,277 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:48:52,646 [INFO] Clicking on listing 'iPhone 13 de 128gb unlock battery 94% in Miami Beach, FL' to open detail view.
+2025-06-20 18:48:57,787 [INFO] ✅ Found valid new listing: 'iPhone 13 de 128gb unlock battery 94% in Miami Beach, FL'
+2025-06-20 18:49:00,929 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:03,581 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 256 GB HS1U in Miami Beach, FL' to open detail view.
+2025-06-20 18:49:05,697 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 256 GB HS1U in Miami Beach, FL'
+2025-06-20 18:49:08,838 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:10,950 [INFO] Clicking on listing 'Apple iPhone 13 128 GB Pink QE1T in Miami Beach, FL' to open detail view.
+2025-06-20 18:49:15,091 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 128 GB Pink QE1T in Miami Beach, FL'
+2025-06-20 18:49:18,235 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:20,562 [INFO] Clicking on listing 'iPhone 13 Bundle in Delray Beach, FL' to open detail view.
+2025-06-20 18:49:22,637 [INFO] ✅ Found valid new listing: 'iPhone 13 Bundle in Delray Beach, FL'
+2025-06-20 18:49:25,773 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:28,475 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 128 GB in Sierra Blue FEA2R4 in Miami Gardens, FL' to open detail view.
+2025-06-20 18:49:31,092 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 128 GB in Sierra Blue FEA2R4 in Miami Gardens, FL'
+2025-06-20 18:49:34,260 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:36,989 [INFO] Clicking on listing 'Apple iPhone 13 256 GB in Blue for Unlocked NN9WHH in Pompano Beach, FL' to open detail view.
+2025-06-20 18:49:46,258 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256 GB in Blue for Unlocked NN9WHH in Pompano Beach, FL'
+2025-06-20 18:49:49,396 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:49:51,777 [INFO] Clicking on listing 'iPhone 13 NEW in Miami, FL' to open detail view.
+2025-06-20 18:49:59,492 [INFO] ✅ Found valid new listing: 'iPhone 13 NEW in Miami, FL'
+2025-06-20 18:50:02,621 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:50:04,767 [INFO] Clicking on listing 'Apple iPhone 13 Mini Pink 128 GB Unlocked Bundle N2E7L4 in Miami, FL' to open detail view.
+2025-06-20 18:50:06,855 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Mini Pink 128 GB Unlocked Bundle N2E7L4 in Miami, FL'
+2025-06-20 18:50:10,003 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:50:12,945 [INFO] Clicking on listing '2 iPhone 13s CPB6UF in Boca Raton, FL' to open detail view.
+2025-06-20 18:50:34,420 [WARNING] Could not process listing '2 iPhone 13s CPB6UF in Boca Raton, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:50:37,525 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:50:40,327 [INFO] Clicking on listing 'Apple iPhone 13 Pro unlocked HD5U4Q in Hialeah, FL' to open detail view.
+2025-06-20 18:51:01,814 [WARNING] Could not process listing 'Apple iPhone 13 Pro unlocked HD5U4Q in Hialeah, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:51:04,929 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:07,244 [INFO] Clicking on listing 'iPhone 13 in Deerfield Beach, FL' to open detail view.
+2025-06-20 18:51:08,852 [INFO] ✅ Found valid new listing: 'iPhone 13 in Deerfield Beach, FL'
+2025-06-20 18:51:11,988 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:14,630 [INFO] Clicking on listing 'Apple iPhone 13 128 GB Pink QE1TKX in Delray Beach, FL' to open detail view.
+2025-06-20 18:51:18,289 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 128 GB Pink QE1TKX in Delray Beach, FL'
+2025-06-20 18:51:21,435 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:29,440 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:51:29,454 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:51:31,691 [INFO] Clicking on listing 'ON HOLD Apple iPhone 13 Pro Max Locked ATT BEE6B7 in Miami, FL' to open detail view.
+2025-06-20 18:51:33,797 [INFO] ✅ Found valid new listing: 'ON HOLD Apple iPhone 13 Pro Max Locked ATT BEE6B7 in Miami, FL'
+2025-06-20 18:51:36,942 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:39,868 [INFO] Clicking on listing 'iPhone 13 Pro 256GB Factory Unlocked PHA7I1 in Lantana, FL' to open detail view.
+2025-06-20 18:51:41,986 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro 256GB Factory Unlocked PHA7I1 in Lantana, FL'
+2025-06-20 18:51:45,129 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:48,037 [INFO] Clicking on listing 'Apple iPhone 13 128 GB in Pink for Unlocked Q2VM4M in Boca Raton, FL' to open detail view.
+2025-06-20 18:51:49,671 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 128 GB in Pink for Unlocked Q2VM4M in Boca Raton, FL'
+2025-06-20 18:51:52,811 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:51:55,719 [INFO] Clicking on listing 'iPhone 13 3P15 in Pompano Beach, FL' to open detail view.
+2025-06-20 18:51:57,319 [INFO] ✅ Found valid new listing: 'iPhone 13 3P15 in Pompano Beach, FL'
+2025-06-20 18:52:00,459 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:52:03,264 [INFO] Clicking on listing 'iPhone 13 Pro 7C92 in Lauderhill, FL' to open detail view.
+2025-06-20 18:52:06,912 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro 7C92 in Lauderhill, FL'
+2025-06-20 18:52:10,054 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:52:12,650 [INFO] Clicking on listing 'Apple iPhone 13 128 GB in Black T Mobile G8XQLU in Miami, FL' to open detail view.
+2025-06-20 18:52:14,231 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 128 GB in Black T Mobile G8XQLU in Miami, FL'
+2025-06-20 18:52:17,379 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:52:19,496 [INFO] Clicking on listing 'iPhone 13 128GB 90%
+Somso una tienda fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Homestead, FL' to open detail view.
+2025-06-20 18:52:41,074 [WARNING] Could not process listing 'iPhone 13 128GB 90%
+Somso una tienda fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Homestead, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010293dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000102935f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x00000001024866f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x00000001024cd9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x000000010250f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x00000001024c1be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000102901598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000102904830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x00000001028e1c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001029050b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x00000001028d2dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000102925420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001029255ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000102935bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:52:44,198 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:52:52,265 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:52:52,280 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:52:55,095 [INFO] Clicking on listing 'iPhone 13 in Homestead, FL' to open detail view.
+2025-06-20 18:52:58,218 [INFO] ✅ Found valid new listing: 'iPhone 13 in Homestead, FL'
+2025-06-20 18:53:01,363 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:53:02,227 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(54, 'Connection reset by peer')': /session/ad3ad61c63f53978139f8982ba8fbc09
+2025-06-20 18:53:02,229 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10aa4dcd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ad3ad61c63f53978139f8982ba8fbc09
+2025-06-20 18:53:02,230 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10aa4fcd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/ad3ad61c63f53978139f8982ba8fbc09
+2025-06-20 18:53:02,236 [INFO] WebDriver closed.
+2025-06-20 18:54:01,292 [INFO] Setting up ChromeDriver...
+2025-06-20 18:54:01,292 [INFO] ====== WebDriver manager ======
+2025-06-20 18:54:01,395 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:54:02,146 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:54:02,629 [INFO] Driver [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-06-20 18:54:02,630 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-20 18:54:02,630 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:54:02,630 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:54:03,710 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-20 18:54:03,710 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-20 18:54:03,710 [INFO] Scraping for listings newer than: 1 day
+2025-06-20 18:54:03,710 [INFO] Navigating to URL for search term 'iphone13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone13&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-20 18:54:10,346 [INFO] Attempting to close dialog by clicking its 'X' button.
+2025-06-20 18:54:11,367 [INFO] Scrolling to load listings...
+2025-06-20 18:54:17,417 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:54:20,431 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:54:20,446 [INFO] Found 46 potential listings for 'iphone13'. Starting processing...
+2025-06-20 18:54:20,479 [INFO] Clicking on listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL' to open detail view.
+2025-06-20 18:54:21,551 [ERROR] Error processing listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL': Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x000000010129dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000101295f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000100de66f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000100e33544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000100e31ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x0000000100e2f8c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000100e2ecc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x0000000100e23728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x0000000100e231b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x0000000100e6f0c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000100e21be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000101261598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000101264830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000101241c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x00000001012650b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000101232dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000101285420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x00000001012855ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000101295bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 393, in scrape_marketplace
+    listing_element.click()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 394, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x000000010129dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000101295f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000100de66f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000100e33544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000100e31ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x0000000100e2f8c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000100e2ecc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x0000000100e23728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x0000000100e231b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x0000000100e6f0c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000100e21be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000101261598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000101264830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000101241c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x00000001012650b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000101232dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000101285420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x00000001012855ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000101295bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:54:26,689 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:54:26,701 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:54:29,008 [INFO] Clicking on listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL' to open detail view.
+2025-06-20 18:54:50,580 [WARNING] Could not process listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010129dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000101295f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000100de66f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000100e2d9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000100e6f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000100e21be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000101261598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000101264830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000101241c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001012650b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000101232dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000101285420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001012855ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000101295bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:54:53,717 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:54:56,564 [INFO] Clicking on listing 'iPhone 13 128gb in Miami, FL' to open detail view.
+2025-06-20 18:54:58,693 [INFO] ✅ Found valid new listing: 'iPhone 13 128gb in Miami, FL'
+2025-06-20 18:55:01,851 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:55:09,542 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:55:09,547 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:55:16,753 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:55:16,764 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:55:24,167 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:55:24,178 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:55:27,212 [INFO] Clicking on listing 'iPhone 13 pro max 128gb GOLD in Miami, FL' to open detail view.
+2025-06-20 18:55:48,782 [WARNING] Could not process listing 'iPhone 13 pro max 128gb GOLD in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010129dd14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000101295f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000100de66f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000100e2d9e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000100e6f0c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000100e21be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000101261598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000101264830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000101241c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x00000001012650b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000101232dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000101285420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x00000001012855ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000101295bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:55:51,917 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 18:56:05,138 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:05,146 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:56:12,397 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:12,403 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:20,572 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:20,579 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:28,151 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:28,162 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:36,048 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:36,057 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:43,929 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:43,940 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:51,351 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:51,360 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:56:58,661 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:56:58,668 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:06,840 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:06,850 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:15,020 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:15,030 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:23,193 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:23,199 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:30,960 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:30,969 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:39,102 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:39,112 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:46,298 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:46,309 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:57:54,178 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:57:54,186 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:58:01,574 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:58:01,584 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:58:09,339 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:58:09,345 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 18:58:15,569 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(54, 'Connection reset by peer')': /session/373578359e9a0a69a687a73e8badc1b9
+2025-06-20 18:58:15,572 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107992390>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/373578359e9a0a69a687a73e8badc1b9
+2025-06-20 18:58:15,574 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107992d50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/373578359e9a0a69a687a73e8badc1b9
+2025-06-20 18:58:15,580 [INFO] WebDriver closed.
+2025-06-20 18:59:11,242 [INFO] Setting up ChromeDriver...
+2025-06-20 18:59:11,242 [INFO] ====== WebDriver manager ======
+2025-06-20 18:59:11,352 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:59:11,858 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-20 18:59:12,357 [INFO] Driver [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-06-20 18:59:12,357 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-20 18:59:12,357 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:59:12,357 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-20 18:59:13,516 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-20 18:59:13,516 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-20 18:59:13,516 [INFO] Scraping for listings newer than: 1 day
+2025-06-20 18:59:13,516 [INFO] Navigating to URL for search term 'iphone13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone13&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-20 18:59:19,413 [INFO] Attempting to close dialog by clicking its 'X' button.
+2025-06-20 18:59:20,430 [INFO] Scrolling to load listings...
+2025-06-20 18:59:26,460 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:59:29,469 [INFO] Found and hid the persistent login popup overlay.
+2025-06-20 18:59:29,479 [INFO] Found 46 potential listings for 'iphone13'. Starting processing...
+2025-06-20 18:59:29,505 [INFO] Clicking on listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL' to open detail view.
+2025-06-20 18:59:30,576 [ERROR] Error processing listing 'Apple iPhone 13 Unlocked 128GB Pink LU1TR1 in Fort Lauderdale, FL': Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad7544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000104ad5ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x0000000104ad38c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000104ad2cc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x0000000104ac7728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x0000000104ac71b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 393, in scrape_marketplace
+    listing_element.click()
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py", line 394, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a class="x1i10hfl xjbqb8w x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1ypdohk xt0psk2 xe8uvvx xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x1heor9g xkrqix3 x1sur9pj x1s688f x1lku1pv" href="/marketplace/item/692442456885171/?ref=search&amp;referral_code=null&amp;referral_story_type=post&amp;__tn__=!%3AD" role="link" tabindex="0">...</a> is not clickable at point (525, 186). Other element would receive the click: <div class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7">...</div>
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad7544 cxxbridge1$string$len + 405388
+4   chromedriver                        0x0000000104ad5ab0 cxxbridge1$string$len + 398584
+5   chromedriver                        0x0000000104ad38c4 cxxbridge1$string$len + 389900
+6   chromedriver                        0x0000000104ad2cc0 cxxbridge1$string$len + 386824
+7   chromedriver                        0x0000000104ac7728 cxxbridge1$string$len + 340336
+8   chromedriver                        0x0000000104ac71b4 cxxbridge1$string$len + 338940
+9   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+10  chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+11  chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+12  chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+13  chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+14  chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+15  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+16  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+17  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+18  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+19  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+20  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 18:59:35,722 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 18:59:35,730 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 18:59:38,182 [INFO] Clicking on listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL' to open detail view.
+2025-06-20 18:59:59,287 [WARNING] Could not process listing 'iPhone 13 128 GB 90% 
+Somos una tiedna fisica ubicados en 
+11629 SW 216th ST Miami FL 33170 in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad19e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 19:00:02,443 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:00:09,722 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:00:09,732 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:00:17,871 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:00:17,883 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:00:25,952 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:00:25,960 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:00:34,055 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:00:34,063 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:00:36,143 [INFO] Clicking on listing 'iPhone 13 pro max 128gb GOLD in Miami, FL' to open detail view.
+2025-06-20 19:00:57,211 [WARNING] Could not process listing 'iPhone 13 pro max 128gb GOLD in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad19e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 19:01:00,350 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:01:08,437 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:08,449 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:16,448 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:16,459 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:23,908 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:23,918 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:31,680 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:31,685 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:39,457 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:39,467 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:47,108 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:47,120 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:01:54,480 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:01:54,489 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:02,656 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:02,666 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:10,766 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:10,773 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:17,970 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:17,977 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:25,226 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:25,234 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:33,343 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:33,352 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:40,812 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:40,819 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:48,427 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:48,437 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:02:56,029 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:02:56,038 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:03:03,278 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:03:03,290 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:03:05,841 [INFO] Clicking on listing '2 iPhone 13s CPB6UF in Boca Raton, FL' to open detail view.
+2025-06-20 19:03:07,397 [INFO] ✅ Found valid new listing: '2 iPhone 13s CPB6UF in Boca Raton, FL'
+2025-06-20 19:03:10,531 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:03:23,898 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:03:23,905 [INFO] Found 'offline' overlay. Removing it completely from DOM.
+2025-06-20 19:03:30,762 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:03:30,772 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:03:38,358 [WARNING] 'X' button not found or not clickable in time.
+2025-06-20 19:03:38,367 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-20 19:03:40,739 [INFO] Clicking on listing 'iPhone 13 in Homestead, FL' to open detail view.
+2025-06-20 19:03:42,344 [INFO] ✅ Found valid new listing: 'iPhone 13 in Homestead, FL'
+2025-06-20 19:03:45,485 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:03:47,974 [INFO] Clicking on listing 'iPhone 13 Pro 128GB Xfinity Silver E7SX7J in Hollywood, FL' to open detail view.
+2025-06-20 19:03:50,073 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro 128GB Xfinity Silver E7SX7J in Hollywood, FL'
+2025-06-20 19:03:53,226 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:03:56,027 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 128 GB in Silver for TMobile AO3DJK in Plantation, FL' to open detail view.
+2025-06-20 19:03:57,625 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 128 GB in Silver for TMobile AO3DJK in Plantation, FL'
+2025-06-20 19:04:00,771 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:03,303 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max R6EBOZ in Boynton Beach, FL' to open detail view.
+2025-06-20 19:04:04,908 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max R6EBOZ in Boynton Beach, FL'
+2025-06-20 19:04:08,030 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:10,779 [INFO] Clicking on listing 'iPhone 13 Pro Max Unlocked Q8VDJF in Boca Raton, FL' to open detail view.
+2025-06-20 19:04:12,359 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max Unlocked Q8VDJF in Boca Raton, FL'
+2025-06-20 19:04:15,495 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:18,096 [INFO] Clicking on listing 'RESERVED FOR ACHOURA Apple iPhone 13 Blue 128 GB Unlocked FA2J51 in Delray Beach, FL' to open detail view.
+2025-06-20 19:04:20,199 [INFO] ✅ Found valid new listing: 'RESERVED FOR ACHOURA Apple iPhone 13 Blue 128 GB Unlocked FA2J51 in Delray Beach, FL'
+2025-06-20 19:04:23,354 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:26,018 [INFO] Clicking on listing 'iPhone 13 Pro Max 256GB UNLOCKED Blue ACL1PI in Miami, FL' to open detail view.
+2025-06-20 19:04:34,234 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max 256GB UNLOCKED Blue ACL1PI in Miami, FL'
+2025-06-20 19:04:37,376 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:39,550 [INFO] Clicking on listing 'Iphone 13 pro max Gold 256 GB phone unlocked I DONT ACCEPT OFFERS D7VWF2 in Miami Beach, FL' to open detail view.
+2025-06-20 19:04:42,140 [INFO] ✅ Found valid new listing: 'Iphone 13 pro max Gold 256 GB phone unlocked I DONT ACCEPT OFFERS D7VWF2 in Miami Beach, FL'
+2025-06-20 19:04:45,286 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:48,195 [INFO] Clicking on listing 'iPhone 13 Pro Max 512gb Sierra Blue Unlocked C5T5U3 in Plantation, FL' to open detail view.
+2025-06-20 19:04:50,287 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max 512gb Sierra Blue Unlocked C5T5U3 in Plantation, FL'
+2025-06-20 19:04:53,436 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:04:56,021 [INFO] Clicking on listing 'iPhone 13 Pro Max ATT O1THKR in Miami, FL' to open detail view.
+2025-06-20 19:04:58,096 [INFO] ✅ Found valid new listing: 'iPhone 13 Pro Max ATT O1THKR in Miami, FL'
+2025-06-20 19:05:01,230 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:05:04,046 [INFO] Clicking on listing 'Apple iPhone 13 256GB Pink Unlocked WN7L0C in West Park, FL' to open detail view.
+2025-06-20 19:05:06,121 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256GB Pink Unlocked WN7L0C in West Park, FL'
+2025-06-20 19:05:09,254 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:05:11,357 [INFO] Clicking on listing 'Apple iPhone 13 256 GB T9UHBG in Lake Worth Beach, FL' to open detail view.
+2025-06-20 19:05:12,932 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 256 GB T9UHBG in Lake Worth Beach, FL'
+2025-06-20 19:05:16,079 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:05:18,882 [INFO] Clicking on listing 'Apple iPhone 13 Pro Max 256 GB in Sierra Blue for Unlocked SBL304 in Davie, FL' to open detail view.
+2025-06-20 19:05:20,975 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro Max 256 GB in Sierra Blue for Unlocked SBL304 in Davie, FL'
+2025-06-20 19:05:24,132 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:05:27,077 [INFO] Clicking on listing 'New fast charger for iPhone 12& 13 in Lake Worth Beach, FL' to open detail view.
+2025-06-20 19:05:48,156 [WARNING] Could not process listing 'New fast charger for iPhone 12& 13 in Lake Worth Beach, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad19e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 19:05:51,300 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:05:54,147 [INFO] Clicking on listing 'Apple iPhone 13 Pro REW6KL in Boca Raton, FL' to open detail view.
+2025-06-20 19:05:56,217 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 Pro REW6KL in Boca Raton, FL'
+2025-06-20 19:05:59,366 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:06:02,362 [INFO] Clicking on listing 'iPhone 13 case in Miami, FL' to open detail view.
+2025-06-20 19:06:23,432 [WARNING] Could not process listing 'iPhone 13 case in Miami, FL'. A required element was not found in time. Skipping. Error: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104f41d14 cxxbridge1$str$ptr + 2735276
+1   chromedriver                        0x0000000104f39f88 cxxbridge1$str$ptr + 2703136
+2   chromedriver                        0x0000000104a8a6f0 cxxbridge1$string$len + 90424
+3   chromedriver                        0x0000000104ad19e0 cxxbridge1$string$len + 381992
+4   chromedriver                        0x0000000104b130c8 cxxbridge1$string$len + 650000
+5   chromedriver                        0x0000000104ac5be8 cxxbridge1$string$len + 333360
+6   chromedriver                        0x0000000104f05598 cxxbridge1$str$ptr + 2487600
+7   chromedriver                        0x0000000104f08830 cxxbridge1$str$ptr + 2500552
+8   chromedriver                        0x0000000104ee5c14 cxxbridge1$str$ptr + 2358188
+9   chromedriver                        0x0000000104f090b8 cxxbridge1$str$ptr + 2502736
+10  chromedriver                        0x0000000104ed6dec cxxbridge1$str$ptr + 2297220
+11  chromedriver                        0x0000000104f29420 cxxbridge1$str$ptr + 2634680
+12  chromedriver                        0x0000000104f295ac cxxbridge1$str$ptr + 2635076
+13  chromedriver                        0x0000000104f39bd4 cxxbridge1$str$ptr + 2702188
+14  libsystem_pthread.dylib             0x000000018d6e2034 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018d6dce3c thread_start + 8
+
+2025-06-20 19:06:26,562 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:06:29,261 [INFO] Clicking on listing 'Apple iPhone 13 pro max unlock in Miami, FL' to open detail view.
+2025-06-20 19:06:31,361 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 pro max unlock in Miami, FL'
+2025-06-20 19:06:34,494 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:06:36,750 [INFO] Clicking on listing 'Apple iPhone 13 pro max unlock in Miami, FL' to open detail view.
+2025-06-20 19:06:38,353 [INFO] ✅ Found valid new listing: 'Apple iPhone 13 pro max unlock in Miami, FL'
+2025-06-20 19:06:41,470 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:06:43,627 [INFO] Clicking on listing 'IPhone 13 Tmobile 5G Pink 256GB Excellent Condition NUV6 in Miami Beach, FL' to open detail view.
+2025-06-20 19:06:45,206 [INFO] ✅ Found valid new listing: 'IPhone 13 Tmobile 5G Pink 256GB Excellent Condition NUV6 in Miami Beach, FL'
+2025-06-20 19:06:48,359 [INFO] Attempting to close overlay by clicking the generic 'X' button.
+2025-06-20 19:06:51,285 [INFO] Scraping run finished. Found 18 new listings.
+2025-06-20 19:06:51,446 [INFO] WebDriver closed.
+2025-06-21 11:13:20,574 [INFO] Setting up ChromeDriver...
+2025-06-21 11:13:20,574 [INFO] ====== WebDriver manager ======
+2025-06-21 11:13:20,699 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:13:21,670 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:13:22,417 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:13:24,257 [INFO] WebDriver version 137.0.7151.119 selected
+2025-06-21 11:13:24,260 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-21 11:13:24,260 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/137.0.7151.119/mac-arm64/chromedriver-mac-arm64.zip
+2025-06-21 11:13:25,212 [INFO] Driver downloading response is 200
+2025-06-21 11:13:29,549 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:13:30,350 [INFO] Driver has been saved in cache [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119]
+2025-06-21 11:13:30,350 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-21 11:13:30,350 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-21 11:13:30,350 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-21 11:13:31,858 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-21 11:13:31,858 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:13:31,859 [INFO] Scraping for listings newer than: 1 day
+2025-06-21 11:13:31,859 [INFO] Navigating to URL for search term 'iphone13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone13&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-21 11:13:42,617 [WARNING] 'X' button not found or not clickable in time.
+2025-06-21 11:13:42,630 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-21 11:13:43,675 [INFO] Scrolling to load listings...
+2025-06-21 11:13:52,731 [INFO] Found 0 potential listings for 'iphone13'. Starting processing...
+2025-06-21 11:13:52,732 [INFO] Scraping run finished. Found 0 new listings.
+2025-06-21 11:13:52,816 [INFO] WebDriver closed.
+2025-06-21 11:13:59,014 [INFO] Setting up ChromeDriver...
+2025-06-21 11:13:59,014 [INFO] ====== WebDriver manager ======
+2025-06-21 11:13:59,133 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:13:59,872 [INFO] Get LATEST chromedriver version for google-chrome
+2025-06-21 11:14:00,632 [INFO] Driver [/Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-06-21 11:14:00,633 [INFO] WebDriver Manager initially found driver at: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-06-21 11:14:00,633 [WARNING] Incorrect driver path detected. Correcting path to: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-21 11:14:00,633 [INFO] Setting executable permissions for: /Users/oyincode/.wdm/drivers/chromedriver/mac64/137.0.7151.119/chromedriver-mac-arm64/chromedriver
+2025-06-21 11:14:01,862 [INFO] ChromeDriver and WebDriver initialized successfully.
+2025-06-21 11:14:01,862 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:14:01,862 [INFO] Scraping for listings newer than: 1 day
+2025-06-21 11:14:01,863 [INFO] Navigating to URL for search term 'iphone13' in 'miami': https://www.facebook.com/marketplace/miami/search/?query=iphone13&sortBy=creation_time_descend&deliveryMethod=local_only
+2025-06-21 11:14:13,307 [WARNING] 'X' button not found or not clickable in time.
+2025-06-21 11:14:13,316 [INFO] Attempting to close overlay by sending the ESCAPE key.
+2025-06-21 11:14:14,354 [INFO] Scrolling to load listings...
+2025-06-21 11:14:23,412 [INFO] Found 0 potential listings for 'iphone13'. Starting processing...
+2025-06-21 11:14:23,412 [INFO] Scraping run finished. Found 0 new listings.
+2025-06-21 11:14:23,499 [INFO] WebDriver closed.
+2025-06-21 11:33:46,586 [CRITICAL] A critical error occurred in the main script: name 'setup_driver' is not defined
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 544, in main
+    driver = setup_driver()
+             ^^^^^^^^^^^^
+NameError: name 'setup_driver' is not defined
+2025-06-21 11:34:32,957 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:38:06,288 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:38:08,809 [CRITICAL] A critical error occurred in the main script: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 563, in main
+    scrape_marketplace(search_terms, location, config)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 511, in scrape_marketplace
+    soup = BeautifulSoup(response.content, 'lxml')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/bs4/__init__.py", line 364, in __init__
+    raise FeatureNotFound(
+bs4.exceptions.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+2025-06-21 11:39:12,756 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:39:15,467 [CRITICAL] A critical error occurred in the main script: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+Traceback (most recent call last):
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 563, in main
+    scrape_marketplace(search_terms, location, config)
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper.py", line 511, in scrape_marketplace
+    soup = BeautifulSoup(response.content, 'lxml')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oyincode/Desktop/fb_marketplace_scraper/scraper/lib/python3.11/site-packages/bs4/__init__.py", line 364, in __init__
+    raise FeatureNotFound(
+bs4.exceptions.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?
+2025-06-21 11:39:36,624 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:44:05,130 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 11:59:47,262 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 12:11:44,647 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.
+2025-06-21 12:12:21,430 [INFO] Running in 'specific' mode for location 'miami' and term 'iphone13'.

@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 from urllib.parse import quote, urlparse, urlunparse
 
 import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 from dateutil.parser import isoparse
 from selenium import webdriver
@@ -24,6 +25,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 
 # --- Configuration & Logging Setup ---
+
+
 
 def setup_logging():
     """Sets up a logger to output to both console and a file."""
@@ -42,421 +45,63 @@ def load_config(filename="config.ini"):
     config.read(filename)
     return config
 
-# --- Deduplication ---
 
-def load_scraped_ids(filepath):
-    """Loads previously scraped listing IDs from a file into a set."""
-    try:
-        with open(filepath, "r") as f:
-            return set(line.strip() for line in f)
-    except FileNotFoundError:
-        return set()
+cookies = {
+    'sb': 'xJ5JZ1vDxbsv4w3eoPY_So3J',
+    'ps_l': '1',
+    'ps_n': '1',
+    'datr': 'Irr6Z49lCkWq6Nzc7B3EVDyx',
+    'ar_debug': '1',
+    'locale': 'en_GB',
+    'c_user': '100001769364027',
+    'presence': 'C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1750500883790%2C%22v%22%3A1%7D',
+    'fr': '1PQvyXZnUZjtwOr94.AWdUFjghhTInoDYQ_WkLO6V2NXRlNBjAdjp9WXbMzSYhVIjMrAk.BoVoYU..AAA.0.0.BoVoYU.AWd9OEesOSNHtWRhujKjyi7NTng',
+    'xs': '30%3A2ptME4Avf_6FzA%3A2%3A1750084182%3A-1%3A-1%3A%3AAcV9FyybTI8ngWPFGe-0BT1SYmzJ8FpAGiyP5u7KdUA',
+    'wd': '1473x406',
+}
 
-def save_scraped_id(filepath, item_id):
-    """Appends a new scraped ID to the deduplication file."""
-    with open(filepath, "a") as f:
-        f.write(f"{item_id}\n")
+headers = {
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+    'cache-control': 'max-age=0',
+    'dpr': '2',
+    'priority': 'u=0, i',
+    'sec-ch-prefers-color-scheme': 'light',
+    'sec-ch-ua': '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    'sec-ch-ua-full-version-list': '"Google Chrome";v="137.0.7151.120", "Chromium";v="137.0.7151.120", "Not/A)Brand";v="24.0.0.0"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-model': '""',
+    'sec-ch-ua-platform': '"macOS"',
+    'sec-ch-ua-platform-version': '"14.3.0"',
+    'sec-fetch-dest': 'document',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-site': 'same-origin',
+    'sec-fetch-user': '?1',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
+    'viewport-width': '1473',
+    # 'cookie': 'sb=xJ5JZ1vDxbsv4w3eoPY_So3J; ps_l=1; ps_n=1; datr=Irr6Z49lCkWq6Nzc7B3EVDyx; ar_debug=1; locale=en_GB; c_user=100001769364027; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1750500883790%2C%22v%22%3A1%7D; fr=1PQvyXZnUZjtwOr94.AWdUFjghhTInoDYQ_WkLO6V2NXRlNBjAdjp9WXbMzSYhVIjMrAk.BoVoYU..AAA.0.0.BoVoYU.AWd9OEesOSNHtWRhujKjyi7NTng; xs=30%3A2ptME4Avf_6FzA%3A2%3A1750084182%3A-1%3A-1%3A%3AAcV9FyybTI8ngWPFGe-0BT1SYmzJ8FpAGiyP5u7KdUA; wd=1473x406',
+}
 
+params = {
+    'query': 'MacBook Pro M1',
+    'sortBy': 'creation_time_descend',
+    'deliveryMethod': 'local_only',
+}
 
-# --- Hide Subsequent Login Popup ---
-def hide_login_popup(driver):
-    """
-    Finds the persistent "Log in to Facebook" popup and hides it using JavaScript.
-    This is necessary because it has no close button and covers the listings.
-    """
-    try:
-        # This JavaScript finds the form by its unique ID, then finds its parent
-        # container (which is the actual visual popup) and sets its display to 'none'.
-        js_script = """
-        var loginPopup = document.querySelector('form#login_popup_cta_form');
-        if (loginPopup && loginPopup.parentElement) {
-            console.log(loginPopup.parentElement)
-            loginPopup.parentElement.style.display = 'none';
-            return true; // Indicate that the popup was found and hidden
-        }
-        return false; // Indicate popup was not found
-        """
-        popup_hidden = driver.execute_script(js_script)
-        if popup_hidden:
-            logging.info("Found and hid the persistent login popup overlay.")
-            
-    except Exception as e:
-        logging.error(f"An error occurred while trying to hide the login popup: {e}")
+import requests
 
+def scrape_marketplace(search_terms, location, config):
+    url = f'https://www.facebook.com/marketplace/{location}/search/'
+    response = requests.get(url, params=params, cookies=cookies, headers=headers)
+    soup = BeautifulSoup(response.content, 'lxml')
 
-def close_overlays_and_popups(driver):
-    """
-    Intelligently tries to close overlays and popups, including the listing detail modal.
-    """
-    # Strategy 1: Find and click the 'Close' button (most common for modals)
-    try:
-        # This selector is specific to the close button inside a dialog/modal
-        close_button_selector = 'div[role="dialog"] div[aria-label="Close"][role="button"]'
-        close_button = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, close_button_selector))
-        )
-        logging.info("Attempting to close dialog by clicking its 'X' button.")
-        driver.execute_script("arguments[0].click();", close_button)
-        time.sleep(1)
-        return
-    except TimeoutException:
-        logging.debug("Dialog-specific 'X' button not found, trying generic one.")
-    
-    # Strategy 2: Try the generic close button (for initial login popups)
-    try:
-        close_button_selector = 'div[aria-label="Close"][role="button"]'
-        close_button = WebDriverWait(driver, 2).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, close_button_selector))
-        )
-        logging.info("Attempting to close overlay by clicking the generic 'X' button.")
-        driver.execute_script("arguments[0].click();", close_button)
-        time.sleep(1)
-        return
-    except TimeoutException:
-        logging.warning("'X' button not found or not clickable in time.")
-
-    try:
-        # Use the distinctive class from the provided HTML
-        offline_overlay_selector = 'div.__fb-light-mode'
-        offline_overlay = driver.find_element(By.CSS_SELECTOR, offline_overlay_selector)
-        logging.info("Found 'offline' overlay. Removing it completely from DOM.")
-        driver.execute_script("arguments[0].remove();", offline_overlay)
-        time.sleep(0.5)
-        return
-    except NoSuchElementException:
-        logging.debug("No 'offline' overlay found.")
-    except Exception as e:
-        logging.error(f"Failed to remove offline overlay: {e}")
-
-    # Strategy 3: Send the ESCAPE key as a fallback
-    try:
-        logging.info("Attempting to close overlay by sending the ESCAPE key.")
-        driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
-        time.sleep(1)
-        return
-    except Exception as e:
-        logging.error(f"Failed to send ESCAPE key: {e}")
-
-# --- Output & Notifications ---
-
-def save_listing_to_file(filepath, listing_data):
-    """Saves a listing dictionary to a JSON Lines file."""
-    with open(filepath, 'a', encoding='utf-8') as f:
-        json.dump(listing_data, f)
-        f.write('\n')
-
-def save_listing_to_csv(filepath, listing_data):
-    """Saves a listing dictionary to a CSV file, creating a header if needed."""
-    
-    # Define the order of columns in the CSV file.
-    fieldnames = [
-        "id", "title", "price", "location", "post_time_str", 
-        "scraped_at", "link", "image_url"
-    ]
-    
-    # Use a more reliable method to check if the header needs to be written.
-    # We check the file size *after* opening it.
-    try:
-        # Check if the file is empty by checking its size
-        is_new_file = os.path.getsize(filepath) == 0
-    except FileNotFoundError:
-        is_new_file = True
-
-    # Open the file in 'append' mode. 
-    # newline='' is crucial to prevent extra blank rows.
-    with open(filepath, 'a', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        
-        # If the file is new (or empty), write the header row first.
-        if is_new_file:
-            writer.writeheader()
-            
-        # Write the listing data as a new row.
-        writer.writerow(listing_data)
-
-def extract_location_from_title(title):
-    """Extracts a location like 'City, ST' from the end of a listing title."""
-    # Regex to find "in City, ST" at the end of the string.
-    match = re.search(r'\s+in\s+([^,]+,\s*[A-Z]{2})$', title.strip())
-    if match:
-        # Return the captured group (the location), stripped of whitespace.
-        return match.group(1).strip()
-    return "" # Return an empty string if no location is found in the title.
-
-def send_slack_notification(webhook_url, listing_data):
-    """Sends a nicely formatted notification to a Slack channel."""
-    try:
-        message = (
-            f"*{listing_data['title']}*\n"
-            f"Price: *{listing_data['price']}*\n"
-            f"Location: {listing_data['location']}\n"
-            f"Posted: {listing_data['post_time_str']}\n"
-            f"Link: {listing_data['link']}"
-        )
-        payload = {
-            "text": message,
-            "attachments": [{
-                "image_url": listing_data['image_urls'][0] if listing_data['image_urls'] else "",
-                "text": "Listing Image"
-            }]
-        }
-        response = requests.post(webhook_url, json=payload, timeout=10)
-        response.raise_for_status()
-        logging.info(f"Successfully sent Slack notification for: {listing_data['title']}")
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Failed to send Slack notification: {e}")
-
-# --- Core Scraper Logic ---
-
-def setup_driver():
-    """
-    Sets up the Selenium WebDriver with appropriate options, including a
-    safeguard for known path and permission issues on macOS.
-    """
-    options = Options()
-    #options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--disable-notifications")
-    
-    logging.info("Setting up ChromeDriver...")
-    try:
-        # Step 1: Let webdriver-manager download the driver and return its path.
-        driver_path = ChromeDriverManager().install()
-        logging.info(f"WebDriver Manager initially found driver at: {driver_path}")
-
-        # Step 2: Correct the known path issue on macOS (from previous fix).
-        notice_filename = 'THIRD_PARTY_NOTICES.chromedriver'
-        if notice_filename in driver_path:
-            correct_driver_path = driver_path.replace(notice_filename, 'chromedriver')
-            logging.warning(f"Incorrect driver path detected. Correcting path to: {correct_driver_path}")
-            driver_path = correct_driver_path
-
-        # --- NEW FIX IS HERE ---
-        # Step 3: Set executable permissions for the driver. This is crucial for macOS/Linux.
-        # The mode 0o755 gives read/write/execute permissions to the owner,
-        # and read/execute permissions to group and others.
-        logging.info(f"Setting executable permissions for: {driver_path}")
-        os.chmod(driver_path, 0o755)
-        # --- END OF NEW FIX ---
-
-        # Step 4: Create the Service object with the verified and permissioned executable path.
-        service = Service(executable_path=driver_path)
-
-        # Step 5: Initialize the WebDriver.
-        driver = webdriver.Chrome(service=service, options=options)
-        logging.info("ChromeDriver and WebDriver initialized successfully.")
-
-    except Exception as e:
-        logging.critical(f"A critical error occurred during WebDriver setup: {e}", exc_info=True)
-        logging.critical("Please ensure Google Chrome is installed and that your internet connection is stable.")
-        raise
-
-    return driver
-
-def parse_post_time(time_str: str) -> timedelta:
-    """
-    Parses human-readable time strings like "a day ago" or "5 minutes ago" 
-    into a timedelta object. Returns a large timedelta if parsing fails.
-    """
-    if not time_str:
-        return timedelta(days=999) # Return a large delta if not found
-
-    time_str = time_str.lower()
-    
-    # Handle the most immediate case first
-    if "just now" in time_str:
-        return timedelta(minutes=1)
-
-    # NEW: Normalize strings like "a day ago" to "1 day ago" before regex.
-    # This also handles "an hour ago" -> "1 hour ago", etc.
-    time_str = time_str.replace("an ", "1 ")
-    time_str = time_str.replace("a ", "1 ")
-
-    match = re.search(r'(\d+)\s+(minute|hour|day|week)s?', time_str)
-    if match:
-        value = int(match.group(1))
-        unit = match.group(2)
-        if "minute" in unit:
-            return timedelta(minutes=value)
-        if "hour" in unit:
-            return timedelta(hours=value)
-        if "day" in unit:
-            return timedelta(days=value)
-        if "week" in unit:
-            return timedelta(weeks=value)
-            
-    # Fallback for unparsed formats (e.g., "Over a month ago")
-    return timedelta(days=999)
-
-def parse_config_duration(duration_str: str) -> timedelta:
-    """
-    Parses a human-readable duration string from the config file (e.g., "1 day", "12 hours").
-    """
-    try:
-        match = re.match(r'(\d+)\s+(minute|hour|day)s?', duration_str.lower())
-        if match:
-            value = int(match.group(1))
-            unit = match.group(2)
-            if "minute" in unit:
-                return timedelta(minutes=value)
-            if "hour" in unit:
-                return timedelta(hours=value)
-            if "day" in unit:
-                return timedelta(days=value)
-    except (TypeError, AttributeError):
-        pass
-
-    logging.warning(f"Could not parse duration '{duration_str}'. Defaulting to 10 minutes.")
-    return timedelta(minutes=10)
-
-def scrape_marketplace(driver, search_terms, location, config):
-    """Main function to orchestrate the scraping process."""
-    base_url = "https://www.facebook.com/marketplace"
-    
-    max_age_str = config['Scraper']['max_listing_age']
-    max_age_delta = parse_config_duration(max_age_str)
-    logging.info(f"Scraping for listings newer than: {max_age_str}")
-    anti_keywords = [kw.strip().lower() for kw in config['Scraper']['anti_keywords'].split(',')]
-    timeout = int(config['Advanced']['timeout'])
-    human_delay = int(config['Advanced']['human_delay_seconds'])
-    output_file = config['Output']['output_file']
-    dedup_file = config['Output']['deduplication_file']
-    slack_enabled = config['Notifications'].getboolean('slack_enabled')
-    slack_webhook_url = config['Notifications']['slack_webhook_url']
-
-    scraped_ids = load_scraped_ids(dedup_file)
-    new_listings_found = 0
-
-    for term in search_terms:
-        search_query = quote(term)
-        url = f"{base_url}/{location}/search/?query={search_query}&sortBy=creation_time_descend&deliveryMethod=local_only"
-        
-        logging.info(f"Navigating to URL for search term '{term}' in '{location}': {url}")
-        driver.get(url)
-        time.sleep(random.uniform(human_delay, human_delay + 2))
-
-        try:
-            close_overlays_and_popups(driver)
-        except Exception:
-            logging.warning("Could not close initial popup, continuing anyway.")
-
-        logging.info("Scrolling to load listings...")
-        for _ in range(3): # Scroll a few times to load initial set
-            hide_login_popup(driver)
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(3)
-        hide_login_popup(driver)
-
-        try:
-            listings = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/marketplace/item/"]')
-            logging.info(f"Found {len(listings)} potential listings for '{term}'. Starting processing...")
-
-            for i in range(len(listings)):
-                listing_element = None
-                title = "N/A" # Default title for logging
-
-                try:
-                    # Re-find the element in each iteration to avoid StaleElementReferenceException
-                    listings_on_page = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/marketplace/item/"]')
-                    if i >= len(listings_on_page):
-                        logging.warning("Listings have changed on page, ending processing for this term.")
-                        break
-                    listing_element = listings_on_page[i]
-
-                    # --- PRE-CLICK FILTERING (FAST) ---
-                    link = listing_element.get_attribute('href')
-                    item_id_match = re.search(r'/item/(\d+)/', link)
-                    if not item_id_match: continue
-                    item_id = item_id_match.group(1)
-                    if item_id in scraped_ids: continue
-
-                    if listing_element.find_elements(By.CSS_SELECTOR, 'i[data-visualcompletion="css-img"]'):
-                        save_scraped_id(dedup_file, item_id)
-                        scraped_ids.add(item_id)
-                        continue
-
-                    try:
-                        title = listing_element.find_element(By.TAG_NAME, 'img').get_attribute('alt')
-                    except NoSuchElementException:
-                        continue
-
-                    if any(kw in title.lower() for kw in anti_keywords):
-                        save_scraped_id(dedup_file, item_id)
-                        scraped_ids.add(item_id)
-                        continue
-                    
-                    # --- SINGLE-TAB WORKFLOW ---
-                    logging.info(f"Clicking on listing '{title}' to open detail view.")
-                    listing_element.click()
-
-                    detail_modal_selector = 'div[role="dialog"]'
-                    WebDriverWait(driver, timeout).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, detail_modal_selector))
-                    )
-                    time.sleep(1)
-                    
-                    # --- TIME & FINAL DATA EXTRACTION ---
-                    post_time_str = ""
-                    post_age = timedelta(days=999)
-                    
-                    time_element = WebDriverWait(driver, timeout).until(
-                        EC.presence_of_element_located((By.XPATH, '//abbr[@aria-label]'))
-                    )
-                    post_time_str = time_element.get_attribute('aria-label')
-                    print("POST TIME", post_time_str)
-                    post_age = parse_post_time(post_time_str)
-                    print("POST AGE", post_age)
-
-                    # *** IMPORTANT: Changed 'break' to 'continue' as requested ***
-                    if post_age > max_age_delta:
-                        logging.info(f"Skipping listing older than {max_age_delta} mins: '{title}' ({post_time_str})")
-                        continue
-
-                    # --- SUCCESS! LISTING PASSED ALL FILTERS ---
-                    logging.info(f"✅ Found valid new listing: '{title}'")
-                    location_text = extract_location_from_title(title)
-                    price = driver.find_element(By.XPATH, '//div[@aria-hidden="false"]//span[starts-with(text(), "$")]').text
-                    image_url = driver.find_element(By.XPATH, '//img[starts-with(@alt, "Product photo of")]').get_attribute('src')
-                    
-                    listing_data = {
-                        "id": item_id, "title": title, "price": price, "location": location_text,
-                        "post_time_str": post_time_str, "scraped_at": datetime.now().isoformat(),
-                        "link": link, "image_url": image_url
-                    }
-
-                    save_listing_to_csv(output_file, listing_data)
-                    save_scraped_id(dedup_file, item_id)
-                    scraped_ids.add(item_id)
-                    new_listings_found += 1
-
-                    if slack_enabled and slack_webhook_url and 'YOUR' not in slack_webhook_url:
-                        send_slack_notification(slack_webhook_url, listing_data)
-
-                # except:
-                #     logging.warning("Stale element encountered. The page likely refreshed. Moving to next listing.")
-                #     continue
-                except (TimeoutException, NoSuchElementException) as e:
-                    logging.warning(f"Could not process listing '{title}'. A required element was not found in time. Skipping. Error: {e}")
-                except Exception as e:
-                    logging.error(f"Error processing listing '{title}': {e}", exc_info=True)
-                finally:
-                    # This robustly closes the modal to get back to the search results
-                    try:
-                        close_overlays_and_popups(driver)
-                        WebDriverWait(driver, 5).until(
-                           EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[role="dialog"]'))
-                        )
-                    except (TimeoutException, NoSuchElementException):
-                        pass # Dialog is already closed, which is fine.
-                    time.sleep(random.uniform(1, 2)) # Pause before next listing
-
-        except Exception as e:
-            logging.error(f"An unexpected error occurred during scraping for '{term}': {e}", exc_info=True)
-
-    logging.info(f"Scraping run finished. Found {new_listings_found} new listings.")
+    listings = soup.select('a[href*="/marketplace/item/"]')
+    print(len(listings))
+    for item in listings:
+        href = item.get('href')
+        text = item.get_text(strip=True)
+        print(f"Link: {href} | Text: {text}")
 
 
 
@@ -488,7 +133,6 @@ def main():
     driver = None
 
     try:
-        driver = setup_driver()
         
         if args.location.lower() == 'all':
             logging.info("Running in 'all' mode, using settings from config.ini.")
@@ -507,7 +151,7 @@ def main():
             # The search term is a single item, but the function expects a list.
             search_terms = [args.search_term]
             location = args.location
-            scrape_marketplace(driver, search_terms, location, config)
+            scrape_marketplace(search_terms, location, config)
 
     except Exception as e:
         logging.critical(f"A critical error occurred in the main script: {e}", exc_info=True)
